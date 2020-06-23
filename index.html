@@ -7,6 +7,9 @@
 <body>
   <script>
     // Your JavaScript goes here! This is the SCRIPT tag of your skeleton HTML file.
+    let score = 0;
+ function game(){
+ 
     function computerPlay(){ 
 
         let random = Math.random();
@@ -33,39 +36,75 @@
 
     const playerSelection = 'rock'.toLowerCase();
     console.log(playerSelection);
+    
 
     function playRound (playerSelection, computerSelection){
         if (playerSelection === computerSelection){
-            return 'It\'s a draw!'
+            return `This round's a draw! Score: ` + score;
         }
 
         if (playerSelection === 'rock' && computerSelection === 'scissors'){
-            return 'Rock beats scissors; you win!'
+            return `Rock beats scissors; you win this round! Score: ` + ++score;
+           
         }
 
         if (playerSelection === 'paper' && computerSelection === 'rock'){
-            return 'Paper beats rock; you win!'
+            return `Paper beats rock; you win this round! Score: ` + ++score;
+           
         }
 
         if (playerSelection === 'scissors' && computerSelection === 'paper'){
-            return 'Scissors beats paper; you win!'
+            return `Scissors beats paper; you win this round! Score: ` + ++score;
+           
         }
         if (playerSelection === 'rock' && computerSelection === 'paper'){
-            return 'Paper beats rock; you lose :('
+            return `Paper beats rock; you lose this round :( Score: ` + --score;
+            
         }
 
         if (playerSelection === 'paper' && computerSelection === 'scissors'){
-            return 'Scissors beats paper; you lose :('
+            return `Scissors beats paper; you lose this round :( Score: ` + --score;
+            
         }
 
         if (playerSelection === 'scissors' && computerSelection === 'rock'){
-            return 'Rock beats scissors; you lose :('
+            return `Rock beats scissors; you lose this round :( Score: ` + --score;
+            
         }
 
         else {'Error!'}
+
+        console.log(score);
     }
 
     console.log(playRound(playerSelection,computerSelection));
+    
+
+ }
+
+ game();
+ game();
+ game();
+ game();
+ game();
+
+ function gameResults(){
+     if (score === 0){
+         return 'The game was a draw. Play again!'
+     }
+
+     if (score > 0){
+         return 'You won the game--congrats!'
+     }
+
+     if (score < 0){
+         return 'You lost the game, sorry! Try again?'
+     }
+
+     else {'Error!'}
+ }
+
+ console.log (gameResults());
 
   </script>
 </body>
