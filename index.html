@@ -12,22 +12,60 @@
         let random = Math.random();
         
         if (random < 0.3){
-            return 'Rock'
+            return 'rock'
             
         }
 
         if (random > 0.7){
-            return 'Paper'
+            return 'paper'
            
         }
 
         else {
-            return 'Scissors'
+            return 'scissors'
             
         }
     }
 
-    console.log(computerPlay('Rock','Paper','Scissors'));
+
+    const computerSelection = computerPlay('rock','paper','scissors');
+    console.log(computerSelection);
+
+    const playerSelection = 'rock'.toLowerCase();
+    console.log(playerSelection);
+
+    function playRound (playerSelection, computerSelection){
+        if (playerSelection === computerSelection){
+            return 'It\'s a draw!'
+        }
+
+        if (playerSelection === 'rock' && computerSelection === 'scissors'){
+            return 'Rock beats scissors; you win!'
+        }
+
+        if (playerSelection === 'paper' && computerSelection === 'rock'){
+            return 'Paper beats rock; you win!'
+        }
+
+        if (playerSelection === 'scissors' && computerSelection === 'paper'){
+            return 'Scissors beats paper; you win!'
+        }
+        if (playerSelection === 'rock' && computerSelection === 'paper'){
+            return 'Paper beats rock; you lose :('
+        }
+
+        if (playerSelection === 'paper' && computerSelection === 'scissors'){
+            return 'Scissors beats paper; you lose :('
+        }
+
+        if (playerSelection === 'scissors' && computerSelection === 'rock'){
+            return 'Rock beats scissors; you lose :('
+        }
+
+        else {'Error!'}
+    }
+
+    console.log(playRound(playerSelection,computerSelection));
 
   </script>
 </body>
