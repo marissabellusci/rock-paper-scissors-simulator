@@ -45,6 +45,7 @@
     function playRound (playerSelection, computerSelection){
         if (playerSelection === computerSelection){
             return `This round's a draw! Score: ` + score;
+            
         }
 
         if (playerSelection === 'rock' && computerSelection === 'scissors'){
@@ -79,9 +80,11 @@
         else {'Error!'}
 
         console.log(score);
+        
     }
 
     console.log(playRound(playerSelection,computerSelection));
+    alert(`The computer used ` + computerSelection + `!`);
     
 
  }
