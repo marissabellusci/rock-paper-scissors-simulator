@@ -8,15 +8,17 @@ while I add buttons and other fancy schmancy UX details -->
   <meta charset="UTF-8"/>
 </head>
 <body>
-    <button id='rock' class='button'>Rock</button>
-    <button id='paper' class='button'>Paper</button>
-    <button id='scissors' class='button'>Scissors</button>
+    
+    <button id='rock' value='rock' class='button'>Rock</button>
+    <button id='paper' value='paper' class='button'>Paper</button>
+    <button id='scissors' value='scissors' class='button'>Scissors</button>
+
 
   <script>
     // Your JavaScript goes here! This is the SCRIPT tag of your skeleton HTML file.
     let score = 0;
  function game(){
- 
+
     function computerPlay(){ 
 
         let random = Math.random();
@@ -37,15 +39,27 @@ while I add buttons and other fancy schmancy UX details -->
         }
     }
 
+const playerSelection = document.addEventListener('click',function(e){
+        console.log(`You chose ${e.target.id}!`);
+        return e.target.id;
+       
+        }
+            );
 
-    const computerSelection = computerPlay('rock','paper','scissors');
-    console.log(computerSelection);
+const computerSelection = computerPlay('rock','paper','scissors');
+console.log(`Computer chose ${computerSelection}`);
 
-    const playerSelection = prompt('Rock, paper, or scissors?').toLowerCase();
-    console.log(playerSelection);
+
+
+
+
+   
+
+
     
+    
+function playRound (playerSelection, computerSelection){
 
-    function playRound (playerSelection, computerSelection){
         if (playerSelection === computerSelection){
             return `This round's a draw! Score: ` + score;
             
@@ -82,15 +96,15 @@ while I add buttons and other fancy schmancy UX details -->
 
         else {'Error!'}
 
-        console.log(score);
+        //console.log(score);
         
     }
 
     
-    alert(`The computer used ` + computerSelection + `!`);
-    alert.console.log(playRound(playerSelection,computerSelection));
+    //alert(`The computer used ` + computerSelection + `!`);
+    //alert.console.log(playRound(playerSelection,computerSelection));
 
- }
+    };
 
  game();
 
@@ -111,8 +125,8 @@ while I add buttons and other fancy schmancy UX details -->
      else {'Error!'}
  }
 
- console.log (gameResults());
- alert(gameResults());
+ //console.log (gameResults());
+ //alert(gameResults());
 
   </script>
 </body>
