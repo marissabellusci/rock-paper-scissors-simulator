@@ -103,9 +103,10 @@ function playRound (playerSelection, computerSelection){
         }
             
 document.addEventListener('click',function(){
+    if(playerSelection !== undefined){
     console.log(`You chose ${playerSelection}`);
-    console.log(playRound());
-
+    console.log(playRound(playerSelection,computerSelection));
+    }
 
     
 });
