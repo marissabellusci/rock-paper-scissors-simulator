@@ -13,13 +13,12 @@ while I add buttons and other fancy schmancy UX details -->
     <button id='paper' value='paper' class='button'>Paper</button>
     <button id='scissors' value='scissors' class='button'>Scissors</button>
 
-
   <script>
-    // Your JavaScript goes here! This is the SCRIPT tag of your skeleton HTML file.
-    let score = 0;
- function game(){
+    
+let score = 0;
 
-    function computerPlay(){ 
+
+function computerPlay(){ 
 
         let random = Math.random();
         
@@ -39,26 +38,31 @@ while I add buttons and other fancy schmancy UX details -->
         }
     }
 
-const playerSelection = document.addEventListener('click',function(e){
-        console.log(`You chose ${e.target.id}!`);
-        return e.target.id;
-       
-        }
-            );
-
-const computerSelection = computerPlay('rock','paper','scissors');
+let computerSelection = computerPlay('rock','paper','scissors');
 console.log(`Computer chose ${computerSelection}`);
 
+let playerSelection = document.addEventListener('click',function(e){
+        if(e.target.id == 'rock' || e.target.id == 'paper' || e.target.id == 'scissors'){
 
+                    
+            if (e.target.id == 'rock') playerSelection = 'rock';
+            if (e.target.id == 'paper') playerSelection = 'paper';
+            if (e.target.id == 'scissors') playerSelection = 'scissors';
+            
+            
+            };
+            
+        }
 
+            );
 
+//right now the playround function is not working at all because BOTH playerSelection and computerSelection are returning undefined
+//I think scope might be messed up 
+            
+document.addEventListener('click',function(){
+    console.log(`You chose ${playerSelection}`);
 
-   
-
-
-    
-    
-function playRound (playerSelection, computerSelection){
+    function playRound (playerSelection, computerSelection){
 
         if (playerSelection === computerSelection){
             return `This round's a draw! Score: ` + score;
@@ -67,17 +71,17 @@ function playRound (playerSelection, computerSelection){
 
         if (playerSelection === 'rock' && computerSelection === 'scissors'){
             return `Rock beats scissors; you win this round! Score: ` + ++score;
-           
+        
         }
 
         if (playerSelection === 'paper' && computerSelection === 'rock'){
             return `Paper beats rock; you win this round! Score: ` + ++score;
-           
+        
         }
 
         if (playerSelection === 'scissors' && computerSelection === 'paper'){
             return `Scissors beats paper; you win this round! Score: ` + ++score;
-           
+        
         }
         if (playerSelection === 'rock' && computerSelection === 'paper'){
             return `Paper beats rock; you lose this round :( Score: ` + --score;
@@ -94,19 +98,13 @@ function playRound (playerSelection, computerSelection){
             
         }
 
-        else {'Error!'}
+        else {'Error!'}   
+        }
+    console.log(playRound());
+});
 
-        //console.log(score);
-        
-    }
+      
 
-    
-    //alert(`The computer used ` + computerSelection + `!`);
-    //alert.console.log(playRound(playerSelection,computerSelection));
-
-    };
-
- game();
 
 
  function gameResults(){
@@ -126,7 +124,7 @@ function playRound (playerSelection, computerSelection){
  }
 
  //console.log (gameResults());
- //alert(gameResults());
+ 
 
   </script>
 </body>
