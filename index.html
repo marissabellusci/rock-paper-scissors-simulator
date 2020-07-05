@@ -36,7 +36,7 @@ function computerPlay(){
             return 'scissors'
             
         }
-    }
+    };
 
 let computerSelection = computerPlay('rock','paper','scissors');
 console.log(`Computer chose ${computerSelection}`);
@@ -58,11 +58,12 @@ let playerSelection = document.addEventListener('click',function(e){
 
 //right now the playround function is not working at all because BOTH playerSelection and computerSelection are returning undefined
 //I think scope might be messed up 
-            
-document.addEventListener('click',function(){
-    console.log(`You chose ${playerSelection}`);
 
-    function playRound (playerSelection, computerSelection){
+// computerSelection and playerSelection are clearly defined above but
+    //by the time we get to the function playRound below, they no longer show
+    //as having been defined. Why?
+
+function playRound (playerSelection, computerSelection){
 
         if (playerSelection === computerSelection){
             return `This round's a draw! Score: ` + score;
@@ -71,17 +72,17 @@ document.addEventListener('click',function(){
 
         if (playerSelection === 'rock' && computerSelection === 'scissors'){
             return `Rock beats scissors; you win this round! Score: ` + ++score;
-        
+
         }
 
         if (playerSelection === 'paper' && computerSelection === 'rock'){
             return `Paper beats rock; you win this round! Score: ` + ++score;
-        
+
         }
 
         if (playerSelection === 'scissors' && computerSelection === 'paper'){
             return `Scissors beats paper; you win this round! Score: ` + ++score;
-        
+
         }
         if (playerSelection === 'rock' && computerSelection === 'paper'){
             return `Paper beats rock; you lose this round :( Score: ` + --score;
@@ -100,11 +101,14 @@ document.addEventListener('click',function(){
 
         else {'Error!'}   
         }
+            
+document.addEventListener('click',function(){
+    console.log(`You chose ${playerSelection}`);
     console.log(playRound());
+
+
+    
 });
-
-      
-
 
 
  function gameResults(){
