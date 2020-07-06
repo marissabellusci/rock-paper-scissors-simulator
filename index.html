@@ -15,7 +15,8 @@ while I add buttons and other fancy schmancy UX details -->
 
   <script>
     
-let score = 0;
+let pScore = 0;
+let cScore = 0;
 
 
 function computerPlay(){ 
@@ -66,36 +67,36 @@ let playerSelection = document.addEventListener('click',function(e){
 function playRound (playerSelection, computerSelection){
 
         if (playerSelection === computerSelection){
-            return `This round's a draw! Score: ` + score;
+            return `This round's a draw! Player: ${pScore} Computer: ${cScore}`;
             
         }
 
         if (playerSelection === 'rock' && computerSelection === 'scissors'){
-            return `Rock beats scissors; you win this round! Score: ` + ++score;
+            return `Rock beats scissors; you win this round! Player: ` + ++pScore + ` / Computer: ${cScore}`;
 
         }
 
         if (playerSelection === 'paper' && computerSelection === 'rock'){
-            return `Paper beats rock; you win this round! Score: ` + ++score;
+            return `Paper beats rock; you win this round! Player: ` + ++pScore + ` / Computer: ${cScore}`;
 
         }
 
         if (playerSelection === 'scissors' && computerSelection === 'paper'){
-            return `Scissors beats paper; you win this round! Score: ` + ++score;
+            return `Scissors beats paper; you win this round! Player: ` + ++pScore + ` / Computer: ${cScore}`;
 
         }
         if (playerSelection === 'rock' && computerSelection === 'paper'){
-            return `Paper beats rock; you lose this round :( Score: ` + --score;
+            return `Paper beats rock; you lose this round :( Player: ${pScore}` + ` / Computer: ` + ++cScore;
             
         }
 
         if (playerSelection === 'paper' && computerSelection === 'scissors'){
-            return `Scissors beats paper; you lose this round :( Score: ` + --score;
+            return `Scissors beats paper; you lose this round :( Player: ${pScore}` + ` / Computer: ` + ++cScore;
             
         }
 
         if (playerSelection === 'scissors' && computerSelection === 'rock'){
-            return `Rock beats scissors; you lose this round :( Score: ` + --score;
+            return `Rock beats scissors; you lose this round :( Player: ${pScore}` + ` / Computer: ` + ++cScore
             
         }
 
