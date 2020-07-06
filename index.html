@@ -57,13 +57,6 @@ let playerSelection = document.addEventListener('click',function(e){
 
             );
 
-//right now the playround function is not working at all because BOTH playerSelection and computerSelection are returning undefined
-//I think scope might be messed up 
-
-// computerSelection and playerSelection are clearly defined above but
-    //by the time we get to the function playRound below, they no longer show
-    //as having been defined. Why?
-
 function playRound (playerSelection, computerSelection){
 
         if (playerSelection === computerSelection){
