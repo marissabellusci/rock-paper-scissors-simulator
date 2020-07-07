@@ -116,7 +116,8 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25vw;
+    width: 21vw;
+    height: 21vw;
     max-width: auto;
     max-height: auto;
     margin: 2vw;
