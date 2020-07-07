@@ -1,11 +1,3 @@
-@media (max-width: 400px){
-
-    body {
-        background-color: rgb(3, 3, 3);
-            }
-    
-}
-
 body {
     background-color: rgb(187, 238, 238);
     font-size: 4vw;
@@ -15,6 +7,15 @@ body {
     max-height: 100vh;
 
 }
+
+@media (max-width: 375px){
+    body{
+        letter-spacing: 1px;
+    }
+
+    
+}
+
 
 .dashboard {
     border-style: none;
@@ -50,6 +51,7 @@ body {
 
     
 }
+
 
 #player-move {
     display: flex;
@@ -125,4 +127,13 @@ button {
     border: solid white;
     border-radius: 50%;
     box-shadow: 3px 3px silver;
+}
+
+@media (max-width: 375px){
+    #thinking-monkey {margin-bottom: 5vw;
+    }
+    .challenger-panel{width: 42vw;
+    }
+    .dashboard{padding-left: 1vw; padding-right: 1vw;
+    }
 }
