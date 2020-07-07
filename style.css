@@ -1,7 +1,8 @@
 body {
-    background-color: paleturquoise;
+    background-color: rgb(187, 238, 238);
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
 
 }
 
@@ -15,7 +16,8 @@ body {
 }
 
 .challenger-panel {
-    border: solid white;
+    border: solid white 4px;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     width: 35vw;
@@ -25,7 +27,12 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
     align-items: center;
-    background-color:paleturquoise;
+    background-color: rgb(215, 248, 248);
+    text-align: center;
+    font-weight: 900;
+    text-shadow: 2px 2px silver;
+    box-shadow: 3px 3px silver;
+
     
 }
 
@@ -33,11 +40,16 @@ body {
     display: flex;
     justify-self: flex-end;
     font-size: 25px;
+    letter-spacing: 1px;
+    margin-bottom: -10px;
+    text-shadow: none;
     
 }
 
 #computer-move {
     font-size: 25px;
+    letter-spacing: 1px;
+    text-shadow:none;
     
 }
 
@@ -47,6 +59,8 @@ button {
     margin: 2px;
     font-size: 30px;
     font-family: 'Bangers', cursive;
+    border-radius: 6px;
+    box-shadow: 2px 2px silver;
 }
 
 .buttons {
@@ -61,8 +75,11 @@ button {
     align-items: center;
     margin: 20px;
     padding: 10px;
-    border: solid white;
+    border: solid white 2px;
+    border-radius: 10px;
     font-size: 20px;
+    background-color: rgb(215, 248, 248);
+    box-shadow: 3px 3px silver;
 }
 
 #round-result {
@@ -78,4 +95,7 @@ button {
     margin: 30px;
     max-width: 60%;
     max-height: auto;
+    border: solid white;
+    border-radius: 50%;
+    box-shadow: 3px 3px silver;
 }
