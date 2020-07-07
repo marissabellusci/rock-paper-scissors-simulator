@@ -33,12 +33,12 @@ body {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    width: 35vw;
+    width: 40vw;
     height: fit-content;
     max-height: 62vh;
     min-height: fit-content;
     justify-content: space-between;
-    padding: 10px;
+    padding: 0;
     padding-top: 2vw;
     padding-bottom: 4vw;
     align-items: center;
