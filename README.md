@@ -1,3 +1,1 @@
-This is my first (working) Javascript project! 
-
-The program is a simple rock, paper, scissors application that is played in your browser's console. 
+This program is a modification to my original rock, paper, scissors application. Using the basic JavaScript logic created for that original game (which was played in the browser's console), I added some additional features to allow the user to play without opening the console at all. 
