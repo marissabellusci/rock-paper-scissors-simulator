@@ -1,16 +1,81 @@
 body {
-    background-color: powderblue;
+    background-color: paleturquoise;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
 .dashboard {
-    border-style: solid;
+    border-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 30px;
+    
 }
 
 .challenger-panel {
-    border-style: solid;
+    border: solid white;
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    height: 50vh;
+    justify-content: space-between;
+    padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    align-items: center;
+    background-color:paleturquoise;
     
+}
+
+#player-move {
+    display: flex;
+    justify-self: flex-end;
+    font-size: 25px;
+    
+}
+
+#computer-move {
+    font-size: 25px;
+    
+}
+
+button {
+    min-width: 30%;
+    padding: 10px;
+    margin: 2px;
+    font-size: 30px;
+    font-family: 'Bangers', cursive;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    border: solid white;
+    font-size: 20px;
+}
+
+#round-result {
+    margin: 10px;
+
+}
+
+#game-result {
+    margin: 10px;
+}
+
+#thinking-monkey{
+    margin: 30px;
+    max-width: 60%;
+    max-height: auto;
 }

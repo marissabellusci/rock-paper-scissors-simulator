@@ -8,20 +8,25 @@ while I add buttons and other fancy schmancy UX details -->
   <meta charset="UTF-8"/>
   <style>
       @import url(style.css);
+      @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap');
+      
   </style>
 </head>
 <body>
 
 <div class = 'dashboard'>
     
-    <div class = 'challenger-panel'>Player Selection
+    <div class = 'challenger-panel'>Player 1
+        <div class='buttons'>
         <button id='rock' value='rock' class='button'>Rock</button>
         <button id='paper' value='paper' class='button'>Paper</button>
         <button id='scissors' value='scissors' class='button'>Scissors</button>
+        </div>
         <div id='player-move'></div>
     </div>
 
-    <div class = 'challenger-panel'> Computer Selection
+    <div class = 'challenger-panel'> CPU
+        <img id='thinking-monkey' src = 'http://www.phlmetropolis.com/Monkey-Computer.jpg'>
         <div id='computer-move'>
         </div>
     </div>
@@ -39,20 +44,17 @@ let pScore = 0;
 let cScore = 0;
 
 
-//const displayText = document.querySelector('div');
-   // displayText.textContent = 'Let\'s get ready to RUMBLE!!!!';
-
 const computerMove = document.getElementById('computer-move');
-    computerMove.textContent = '';
+    computerMove.textContent = 'Computer is thinking...';
 
 const playerMove = document.getElementById('player-move');
-    playerMove.textContent = '';
+    playerMove.textContent = 'Choose your fighter!';
 
 const roundResultText = document.getElementById('round-result');
-    roundResultText.textContent = 'LET\'S GET READY TO RUMBLE!!!';
+    roundResultText.textContent = 'Click "Rock," "Paper," or "Scissors" to start the game!';
 
 const gameResultText = document.getElementById('game-result');
-    gameResultText.textContent = 'Click "Rock," "Paper," or "Scissors" to start the game!';
+    gameResultText.textContent = '';
 
 
 function computerPlay(){ 
@@ -116,7 +118,7 @@ function playRound (playerSelection, computerSelection){
 
 
         if (playerSelection === computerSelection && pScore < 5 && cScore < 5){
-            return `This round's a draw! Player: ${pScore} Computer: ${cScore}`;
+            return `This round's a draw! Player: ${pScore} / Computer: ${cScore}`;
             
         }
 
@@ -135,17 +137,17 @@ function playRound (playerSelection, computerSelection){
 
         }
         if (playerSelection === 'rock' && computerSelection === 'paper' && pScore < 6 && cScore < 6){
-            return `Paper beats rock; you lose this round :( Player: ${pScore}` + ` / Computer: ` + ++cScore;
+            return `Paper beats rock; you lose this round. Player: ${pScore}` + ` / Computer: ` + ++cScore;
             
         }
 
         if (playerSelection === 'paper' && computerSelection === 'scissors' && pScore < 6 && cScore < 6){
-            return `Scissors beats paper; you lose this round :( Player: ${pScore}` + ` / Computer: ` + ++cScore;
+            return `Scissors beats paper; you lose this round. Player: ${pScore}` + ` / Computer: ` + ++cScore;
             
         }
 
         if (playerSelection === 'scissors' && computerSelection === 'rock' && pScore < 6 && cScore < 6){
-            return `Rock beats scissors; you lose this round :( Player: ${pScore}` + ` / Computer: ` + ++cScore
+            return `Rock beats scissors; you lose this round. Player: ${pScore}` + ` / Computer: ` + ++cScore
             
         }
 
@@ -154,9 +156,9 @@ function playRound (playerSelection, computerSelection){
             
 document.addEventListener('click',function(){
     if(playerSelection !== undefined && pScore < 5 && cScore <5){
-             playerMove.textContent =`You chose ${playerSelection}`;
+             playerMove.textContent =`You chose: ${playerSelection}!`;
         let computerSelection = computerPlay('rock','paper','scissors');
-             computerMove.textContent =`Computer chose ${computerSelection}`;
+             computerMove.textContent =`Computer chose: ${computerSelection}!`;
 
     if (pScore < 5 && cScore < 5){
             roundResultText.textContent = playRound(playerSelection,computerSelection)};
