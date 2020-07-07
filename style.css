@@ -8,7 +8,7 @@ body {
 
 }
 
-@media (max-width: 375px){
+@media (max-width: 411px){
     body{
         letter-spacing: 1px;
     }
@@ -129,11 +129,11 @@ button {
     box-shadow: 3px 3px silver;
 }
 
-@media (max-width: 375px){
+@media (max-width: 411px){
     #thinking-monkey {margin-bottom: 5vw;
     }
-    .challenger-panel{width: 42vw;
+    .challenger-panel{width: 42vw; height: 20vh;
     }
-    .dashboard{padding-left: 1vw; padding-right: 1vw;
+    .dashboard{padding-left: 1vw; padding-right: 1vw; height: 25vh;
     }
 }
