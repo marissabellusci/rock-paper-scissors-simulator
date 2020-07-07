@@ -14,6 +14,11 @@ while I add buttons and other fancy schmancy UX details -->
     <button id='scissors' value='scissors' class='button'>Scissors</button>
 
     <div>
+        <div id='computer-move'></div>
+        <div id='player-move'></div>
+        <div id='round-result'></div>
+
+        <div id='game-result'></div>
 
     </div>
 
@@ -23,8 +28,20 @@ let pScore = 0;
 let cScore = 0;
 
 
-const displayText = document.querySelector('div');
-    displayText.textContent = 'Let\'s get ready to RUMBLE!!!!';
+//const displayText = document.querySelector('div');
+   // displayText.textContent = 'Let\'s get ready to RUMBLE!!!!';
+
+const computerMove = document.getElementById('computer-move');
+    computerMove.textContent = '';
+
+const playerMove = document.getElementById('player-move');
+    playerMove.textContent = '';
+
+const roundResultText = document.getElementById('round-result');
+    roundResultText.textContent = '';
+
+const gameResultText = document.getElementById('game-result');
+    gameResultText.textContent = '';
 
 
 function computerPlay(){ 
@@ -73,11 +90,11 @@ function gameResults(){
      }
 
      if (pScore > cScore){
-         return 'You won the game--congrats!'
+         return 'You won the game--congrats! Refresh the page to play again.'
      }
 
      if (pScore < cScore){
-         return 'You lost the game, sorry! Try again?'
+         return 'You lost the game, sorry! Refresh the page to try again!'
      }
 
      else {'Error!'}
@@ -126,15 +143,15 @@ function playRound (playerSelection, computerSelection){
             
 document.addEventListener('click',function(){
     if(playerSelection !== undefined && pScore < 5 && cScore <5){
-    console.log(`You chose ${playerSelection}`);
+             playerMove.textContent =`You chose ${playerSelection}`;
         let computerSelection = computerPlay('rock','paper','scissors');
-            console.log(`Computer chose ${computerSelection}`);
+             computerMove.textContent =`Computer chose ${computerSelection}`;
 
     if (pScore < 5 && cScore < 5){
-    console.log(playRound(playerSelection,computerSelection))};
+            roundResultText.textContent = playRound(playerSelection,computerSelection)};
 
     if (pScore === 5 || cScore === 5){
-            console.log (gameResults());
+            gameResultText.textContent = gameResults();
         }
     }
 
