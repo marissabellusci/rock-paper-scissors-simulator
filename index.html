@@ -6,20 +6,31 @@ while I add buttons and other fancy schmancy UX details -->
 <head>
   <title>Rock, Paper, Scissors Simulator</title>
   <meta charset="UTF-8"/>
+  <style>
+      @import url(style.css);
+  </style>
 </head>
 <body>
-    
-    <button id='rock' value='rock' class='button'>Rock</button>
-    <button id='paper' value='paper' class='button'>Paper</button>
-    <button id='scissors' value='scissors' class='button'>Scissors</button>
 
-    <div>
-        <div id='computer-move'></div>
+<div class = 'dashboard'>
+    
+    <div class = 'challenger-panel'>Player Selection
+        <button id='rock' value='rock' class='button'>Rock</button>
+        <button id='paper' value='paper' class='button'>Paper</button>
+        <button id='scissors' value='scissors' class='button'>Scissors</button>
         <div id='player-move'></div>
-        <div id='round-result'></div>
+    </div>
+
+    <div class = 'challenger-panel'> Computer Selection
+        <div id='computer-move'>
+        </div>
+    </div>
+</div>
+
+    <div class='results'>       
+         <div id='round-result'></div>
 
         <div id='game-result'></div>
-
     </div>
 
   <script>
@@ -38,10 +49,10 @@ const playerMove = document.getElementById('player-move');
     playerMove.textContent = '';
 
 const roundResultText = document.getElementById('round-result');
-    roundResultText.textContent = '';
+    roundResultText.textContent = 'LET\'S GET READY TO RUMBLE!!!';
 
 const gameResultText = document.getElementById('game-result');
-    gameResultText.textContent = '';
+    gameResultText.textContent = 'Click "Rock," "Paper," or "Scissors" to start the game!';
 
 
 function computerPlay(){ 
