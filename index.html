@@ -15,10 +15,11 @@ while I add buttons and other fancy schmancy UX details -->
 
   <script>
 
-
+//I think I can re-try writing the loop now that I have re-ordered the playerselection / computer selection code
     
 let pScore = 0;
 let cScore = 0;
+
 
 function computerPlay(){ 
 
@@ -60,39 +61,56 @@ playerSelection = document.addEventListener('click',function(e){
 
             );
 
+function gameResults(){
+     if (pScore === cScore){
+         return 'The game was a draw. Play again!'
+     }
+
+     if (pScore > cScore){
+         return 'You won the game--congrats!'
+     }
+
+     if (pScore < cScore){
+         return 'You lost the game, sorry! Try again?'
+     }
+
+     else {'Error!'}
+ }
+
+
 function playRound (playerSelection, computerSelection){
 
 
-        if (playerSelection === computerSelection){
+        if (playerSelection === computerSelection && pScore < 5 && cScore < 5){
             return `This round's a draw! Player: ${pScore} Computer: ${cScore}`;
             
         }
 
-        if (playerSelection === 'rock' && computerSelection === 'scissors'){
+        if (playerSelection === 'rock' && computerSelection === 'scissors' && pScore < 6 && cScore < 6){
             return `Rock beats scissors; you win this round! Player: ` + ++pScore + ` / Computer: ${cScore}`;
 
         }
 
-        if (playerSelection === 'paper' && computerSelection === 'rock'){
+        if (playerSelection === 'paper' && computerSelection === 'rock' && pScore < 6 && cScore < 6){
             return `Paper beats rock; you win this round! Player: ` + ++pScore + ` / Computer: ${cScore}`;
 
         }
 
-        if (playerSelection === 'scissors' && computerSelection === 'paper'){
+        if (playerSelection === 'scissors' && computerSelection === 'paper' && pScore < 6 && cScore < 6){
             return `Scissors beats paper; you win this round! Player: ` + ++pScore + ` / Computer: ${cScore}`;
 
         }
-        if (playerSelection === 'rock' && computerSelection === 'paper'){
+        if (playerSelection === 'rock' && computerSelection === 'paper' && pScore < 6 && cScore < 6){
             return `Paper beats rock; you lose this round :( Player: ${pScore}` + ` / Computer: ` + ++cScore;
             
         }
 
-        if (playerSelection === 'paper' && computerSelection === 'scissors'){
+        if (playerSelection === 'paper' && computerSelection === 'scissors' && pScore < 6 && cScore < 6){
             return `Scissors beats paper; you lose this round :( Player: ${pScore}` + ` / Computer: ` + ++cScore;
             
         }
 
-        if (playerSelection === 'scissors' && computerSelection === 'rock'){
+        if (playerSelection === 'scissors' && computerSelection === 'rock' && pScore < 6 && cScore < 6){
             return `Rock beats scissors; you lose this round :( Player: ${pScore}` + ` / Computer: ` + ++cScore
             
         }
@@ -101,12 +119,17 @@ function playRound (playerSelection, computerSelection){
         }
             
 document.addEventListener('click',function(){
-    if(playerSelection !== undefined){
+    if(playerSelection !== undefined && pScore < 5 && cScore <5){
     console.log(`You chose ${playerSelection}`);
         let computerSelection = computerPlay('rock','paper','scissors');
             console.log(`Computer chose ${computerSelection}`);
-            
-    console.log(playRound(playerSelection,computerSelection));
+
+    if (pScore < 5 && cScore < 5){
+    console.log(playRound(playerSelection,computerSelection))};
+
+    if (pScore === 5 || cScore === 5){
+            console.log (gameResults());
+        }
     }
 
     
@@ -114,24 +137,6 @@ document.addEventListener('click',function(){
 
 
 
- function gameResults(){
-     if (score === 0){
-         return 'The game was a draw. Play again!'
-     }
-
-     if (score > 0){
-         return 'You won the game--congrats!'
-     }
-
-     if (score < 0){
-         return 'You lost the game, sorry! Try again?'
-     }
-
-     else {'Error!'}
- }
-
- //console.log (gameResults());
- 
 
   </script>
 </body>
