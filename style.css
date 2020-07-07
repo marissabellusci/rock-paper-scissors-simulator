@@ -54,7 +54,7 @@ body {
 #player-move {
     display: flex;
     justify-self: flex-end;
-    font-size: 2.5vw;
+    font-size: 20px;
     letter-spacing: 1px;
     text-shadow: none;
     
@@ -63,7 +63,7 @@ body {
 #computer-move {
     display: flex;
     justify-self: flex-end;
-    font-size: 2.5vw;
+    font-size: 20px;
     letter-spacing: 1px;
     text-shadow: none;
 }
