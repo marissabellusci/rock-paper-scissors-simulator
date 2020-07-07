@@ -5,12 +5,18 @@ body {
     letter-spacing: 2px;
     text-align: center;
     max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
 
 }
 
 @media (max-width: 411px){
     body{
         letter-spacing: 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 
     
@@ -103,6 +109,8 @@ button {
     font-size: 20px;
     background-color: rgb(215, 248, 248);
     box-shadow: 3px 3px silver;
+    justify-self: flex-end;
+    align-self: stretch;
 }
 
 #round-result {
@@ -132,8 +140,9 @@ button {
 @media (max-width: 411px){
     #thinking-monkey {margin-bottom: 5vw;
     }
-    .challenger-panel{width: 42vw; height: 20vh;
+    .challenger-panel{width: 42vw; height: 30vh; margin-top: 20vw;
     }
     .dashboard{padding-left: 1vw; padding-right: 1vw; height: 25vh;
     }
+    .results{margin-top: 40vw;}
 }
