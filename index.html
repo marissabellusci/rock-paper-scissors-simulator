@@ -14,10 +14,11 @@ while I add buttons and other fancy schmancy UX details -->
     <button id='scissors' value='scissors' class='button'>Scissors</button>
 
   <script>
+
+
     
 let pScore = 0;
 let cScore = 0;
-
 
 function computerPlay(){ 
 
@@ -39,16 +40,18 @@ function computerPlay(){
         }
     };
 
-let computerSelection = computerPlay('rock','paper','scissors');
-console.log(`Computer chose ${computerSelection}`);
 
-let playerSelection = document.addEventListener('click',function(e){
+let playerSelection = '';
+
+playerSelection = document.addEventListener('click',function(e){
         if(e.target.id == 'rock' || e.target.id == 'paper' || e.target.id == 'scissors'){
 
                     
             if (e.target.id == 'rock') playerSelection = 'rock';
             if (e.target.id == 'paper') playerSelection = 'paper';
             if (e.target.id == 'scissors') playerSelection = 'scissors';
+
+
             
             
             };
@@ -58,6 +61,7 @@ let playerSelection = document.addEventListener('click',function(e){
             );
 
 function playRound (playerSelection, computerSelection){
+
 
         if (playerSelection === computerSelection){
             return `This round's a draw! Player: ${pScore} Computer: ${cScore}`;
@@ -99,11 +103,15 @@ function playRound (playerSelection, computerSelection){
 document.addEventListener('click',function(){
     if(playerSelection !== undefined){
     console.log(`You chose ${playerSelection}`);
+        let computerSelection = computerPlay('rock','paper','scissors');
+            console.log(`Computer chose ${computerSelection}`);
+            
     console.log(playRound(playerSelection,computerSelection));
     }
 
     
 });
+
 
 
  function gameResults(){
