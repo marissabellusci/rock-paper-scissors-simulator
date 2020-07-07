@@ -1,115 +1,14 @@
-@media (max-width: 500px){
+@media (max-width: 400px){
 
     body {
-        background-color:black;
-        font-size: 40px;
-        font-family: 'Montserrat', sans-serif;
-        letter-spacing: 2px;
-        text-align: center;;
+        background-color: rgb(3, 3, 3);
+            }
     
-    }
-    
-    .dashboard {
-        border-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 30px;
-        
-    }
-    
-    .challenger-panel {
-        border: solid white 4px;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        width: 35vw;
-        height: 50vh;
-        justify-content: space-between;
-        padding: 10px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        align-items: center;
-        background-color: rgb(215, 248, 248);
-        text-align: center;
-        font-weight: 900;
-        text-shadow: 2px 2px silver;
-        box-shadow: 3px 3px silver;
-    
-        
-    }
-    
-    #player-move {
-        display: flex;
-        justify-self: flex-end;
-        font-size: 25px;
-        letter-spacing: 1px;
-        margin-bottom: -10px;
-        text-shadow: none;
-        
-    }
-    
-    #computer-move {
-        font-size: 25px;
-        letter-spacing: 1px;
-        text-shadow:none;
-        
-    }
-    
-    button {
-        min-width: 30%;
-        padding: 10px;
-        margin: 2px;
-        font-size: 30px;
-        font-family: 'Bangers', cursive;
-        border-radius: 6px;
-        box-shadow: 2px 2px silver;
-    }
-    
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        
-    }
-    
-    .results {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px;
-        padding: 10px;
-        border: solid white 2px;
-        border-radius: 10px;
-        font-size: 20px;
-        background-color: rgb(215, 248, 248);
-        box-shadow: 3px 3px silver;
-    }
-    
-    #round-result {
-        margin: 10px;
-    
-    }
-    
-    #game-result {
-        margin: 10px;
-    }
-    
-    #thinking-monkey{
-        margin: 30px;
-        max-width: 60%;
-        max-height: auto;
-        border: solid white;
-        border-radius: 50%;
-        box-shadow: 3px 3px silver;
-    }
-    
-
 }
-
 
 body {
     background-color: rgb(187, 238, 238);
-    font-size: 40px;
+    font-size: 7vw;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     text-align: center;;
@@ -131,7 +30,9 @@ body {
     display: flex;
     flex-direction: column;
     width: 35vw;
-    height: 50vh;
+    height: fit-content;
+    max-height: fit-content;
+    min-height: fit-content;
     justify-content: space-between;
     padding: 10px;
     padding-top: 50px;
@@ -149,25 +50,27 @@ body {
 #player-move {
     display: flex;
     justify-self: flex-end;
-    font-size: 25px;
+    font-size: 2.5vw;
     letter-spacing: 1px;
-    margin-bottom: -10px;
     text-shadow: none;
     
 }
 
 #computer-move {
-    font-size: 25px;
+    display: flex;
+    justify-self: flex-end;
+    font-size: 2.5vw;
     letter-spacing: 1px;
-    text-shadow:none;
-    
+    text-shadow: none;
 }
 
 button {
-    min-width: 30%;
-    padding: 10px;
-    margin: 2px;
-    font-size: 30px;
+    
+    min-width: fit-content;
+    padding: 1.5vw;
+    margin: .5vw;
+    font-size: 4vw;
+    max-height: fit-content;
     font-family: 'Bangers', cursive;
     border-radius: 6px;
     box-shadow: 2px 2px silver;
@@ -176,14 +79,18 @@ button {
 .buttons {
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
+    width: 30vw;
+    max-width: 70%;
+    max-height: auto;
+    margin: .5vw;
 }
 
 .results {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin: 3vh;
     padding: 10px;
     border: solid white 2px;
     border-radius: 10px;
@@ -202,11 +109,14 @@ button {
 }
 
 #thinking-monkey{
-    margin: 30px;
-    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    max-width: 70%;
     max-height: auto;
+    margin: 1.5vw;
     border: solid white;
     border-radius: 50%;
     box-shadow: 3px 3px silver;
 }
-
